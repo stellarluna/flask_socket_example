@@ -1,12 +1,20 @@
-<head>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-  <script type="text/javascript" charset="utf-8">
-        var socket = io.connect('http://' + document.domain + ':' + location.port);
-        socket.on('connect', function() {
-             console.log('connected');
-        });
-        socket.on('message', function(data) {
-             console.log(data);
-        });
-  </script>
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Socket Example</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+          var socket = io.connect('http://' + document.domain + ':' + location.port);
+          socket.on('connect', function() {
+               console.log('connected');
+          });
+          socket.on('message', function(data) {
+               console.log(data);
+          });
+    </script>
+  </head>
+  <body>
+    <h2>Open dev tools to see messages from server.</h2>
+  </body>
+</html>
