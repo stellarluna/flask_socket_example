@@ -20,6 +20,10 @@ def connect():
     if thread is None:
         thread = socketio.start_background_task(target=background_thread)
 
+@socketio.on('message')
+def handle_hello(json):
+    print('Message from client was: {0}'.format(json))
+    send(json, json=False)
 
 @app.route('/')
 def index():

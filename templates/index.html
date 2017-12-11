@@ -12,9 +12,13 @@
           socket.on('message', function(data) {
                console.log(data);
           });
+          var hello_button = function() {
+            socket.send('{"message": "Hi!"}')
+          }
     </script>
   </head>
   <body>
     <h2>Open dev tools to see messages from server.</h2>
+    <button type="button" onclick="hello_button()">Hello!</button>
   </body>
 </html>
